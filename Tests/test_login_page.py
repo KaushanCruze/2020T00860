@@ -10,7 +10,7 @@ class TestLogin:
     password = "admin123"
     @pytest.fixture(autouse=True)
     def setup(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.get(self.base_url)
         yield
