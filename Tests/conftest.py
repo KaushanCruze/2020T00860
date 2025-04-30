@@ -7,7 +7,7 @@ def pytest_runtest_makereport(item, call):
     outcome = yield
     rep = outcome.get_result()
 
-    # Only capture screenshots for failures in test phase (not setup/teardown)
+    # Only capture screenshots for failures in test phase
     if rep.when == "call" and rep.failed:
         driver = item.instance.driver
         test_name = item.name
